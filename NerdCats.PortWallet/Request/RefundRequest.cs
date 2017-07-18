@@ -1,8 +1,8 @@
 ﻿namespace NerdCats.PortWallet.Request
 {
-    public class PaymentVerify
+    public class RefundRequest
     {
-        public string call => "ipn_validate";
+        public string call => "refund_request";
         public double amount { get; set; }
         public InvoiceRequest invoice { get; set; }
     }
