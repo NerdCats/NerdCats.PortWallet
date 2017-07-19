@@ -121,5 +121,20 @@
             Assert.NotNull(response);
             Assert.True(response.status == ResponseStatus.ACCEPTED);
         }
+
+        [Fact]
+        public async Task VerifySamplePayment()
+        {
+            var walletClient = new WalletClient(
+                Constants.ApiSandboxBase,
+                Constants.AppKey,
+                Constants.SecretKey
+                );
+            var request = new PaymentVerify()
+            {
+                amount = 100,
+                invoice = "854EEA58BC861985",
+            };
+        }
     }
 }
